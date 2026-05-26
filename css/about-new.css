@@ -1,0 +1,369 @@
+/* ============================================================
+   INTERNLY — About Page Styles
+   Extends main.css with about-specific sections
+   ============================================================ */
+
+/* ----- ABOUT HERO ------------------------------------------ */
+.about-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(3.5rem + 1.5rem + 4rem) 1.5rem 4rem;
+  background: var(--bg-dark);
+  position: relative;
+}
+
+.about-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.about-headline {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 900;
+  color: white;
+  line-height: 0.9;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about-hero-desc {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ----- ABOUT DESCRIPTION + STATS --------------------------- */
+.about-desc-section {
+  padding: 4rem 1.5rem 5rem;
+  background: var(--bg-dark);
+}
+
+.about-desc-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-desc-text {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 2;
+  text-align: center;
+}
+
+.stat-highlight {
+  color: white;
+  font-weight: 800;
+  font-size: 1.1em;
+  border-bottom: 2px solid var(--lime);
+  padding-bottom: 1px;
+}
+
+/* ----- FOUNDER LETTER -------------------------------------- */
+.about-letter-section {
+  padding: 5rem 1.5rem;
+  background: var(--bg-section-alt);
+  border-top: 1px solid var(--border-card);
+  border-bottom: 1px solid var(--border-card);
+}
+
+.about-letter-inner {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.letter-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.letter-content p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+
+.letter-content p:last-child {
+  margin-bottom: 0;
+}
+
+.letter-emphasis {
+  color: white !important;
+  font-weight: 700;
+  font-size: 1.1rem !important;
+  border-right: 3px solid var(--lime);
+  padding-right: 1rem;
+  margin-top: 2rem !important;
+  line-height: 1.9 !important;
+}
+
+.letter-signature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-card);
+}
+
+.signature-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--purple));
+  flex-shrink: 0;
+}
+
+.signature-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.signature-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: white;
+}
+
+.signature-role {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ----- LEADERSHIP ------------------------------------------ */
+.about-leadership-section {
+  padding: 5rem 1.5rem;
+  background: var(--bg-dark);
+}
+
+.about-leadership-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.leadership-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.6rem;
+}
+
+.leader-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(74,101,239,0.2), rgba(162,112,241,0.2));
+  border: 2px solid var(--border-card);
+  margin-bottom: 0.5rem;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.leader-card:hover .leader-avatar {
+  border-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.leader-name {
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: white;
+}
+
+.leader-role {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ----- OFFICE LOCATIONS ------------------------------------ */
+.about-offices-section {
+  padding: 5rem 1.5rem;
+  background: var(--bg-section-alt);
+  border-top: 1px solid var(--border-card);
+}
+
+.about-offices-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.offices-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.offices-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+.offices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.office-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+              border-color 0.35s ease;
+}
+
+.office-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-card-hover);
+}
+
+.office-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.office-city {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: white;
+}
+
+.office-area {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* ----- OUR STORY ------------------------------------------- */
+.about-story-section {
+  padding: 6rem 1.5rem;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border-card);
+}
+
+.about-story-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.story-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.story-text-large {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.story-text-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ----- RESPONSIVE ------------------------------------------ */
+
+@media (max-width: 1024px) {
+  .leadership-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding-top: calc(3rem + 1.5rem + 3rem);
+    min-height: 50vh;
+  }
+
+  .about-headline {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .offices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-emphasis {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-headline {
+    font-size: clamp(1.8rem, 11vw, 2.5rem);
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .leader-avatar {
+    width: 64px;
+    height: 64px;
+  }
+}
