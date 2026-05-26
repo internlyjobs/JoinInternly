@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>internly – ابدأ مسيرتك. من غير وعود كدابة.</title>
+<meta name="description" content="internly — شبكة مصر الموثّقة لتدريبات منظمة ومدروسة. نوصّل شباب Gen Z الطموح بشركات حقيقية.">
+<meta name="theme-color" content="#0a0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<!-- Google Analytics placeholder -->
+<!-- Microsoft Clarity placeholder -->
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div class="loader-screen" id="loader">
+  <div class="loader-logo"><img src="assets/logo.png" alt="internly"></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     FLOATING PILL NAVBAR + MEGA MENU
+════════════════════════════════════ -->
+<nav class="pill-nav" id="mainNav">
+  <div class="nav-container">
+    <div class="nav-logo"><a href="#"><img src="assets/logo.png" alt="internly"></a></div>
+    <ul class="nav-links" id="navLinks">
+      <li data-dropdown="students">
+        <a href="#">للطلاب</a>
+        <div class="mega-dropdown" id="dd-students">
+          <div class="mega-promo">
+            <div class="mega-promo-badge"><img src="assets/logo.png" alt="internly"></div>
+            <p class="mega-promo-text">اكتشف تدريبات موثّقة ومنظمة تبني مسيرتك المهنية صح من البداية.</p>
+            <a href="#" class="mega-promo-link">ابدأ رحلتك <span>→</span></a>
+          </div>
+          <div class="mega-col">
+            <h4>استكشف</h4>
+            <a href="#">تصفّح التدريبات الموثّقة</a>
+            <a href="#">ابني الباسبور المهني</a>
+            <a href="#">مينتورشيب وتوجيه</a>
+            <a href="#">تقييم المهارات</a>
+          </div>
+          <div class="mega-col">
+            <h4>موارد</h4>
+            <a href="#">نصائح المقابلات</a>
+            <a href="#">دليل أول تدريب</a>
+            <a href="#">قصص نجاح</a>
+          </div>
+        </div>
+      </li>
+      <li data-dropdown="employers">
+        <a href="#">لأصحاب العمل</a>
+        <div class="mega-dropdown" id="dd-employers">
+          <div class="mega-promo">
+            <div class="mega-promo-badge"><img src="assets/logo.png" alt="internly"></div>
+            <p class="mega-promo-text">وصّل شركتك بأحسن المواهب الجديدة في مصر — متدربين متقيمين وجاهزين.</p>
+            <a href="#" class="mega-promo-link">انشر تدريب <span>→</span></a>
+          </div>
+          <div class="mega-col">
+            <h4>الحلول</h4>
+            <a href="#">انشر تدريب</a>
+            <a href="#">مطابقة ذكية (قريباً)</a>
+            <a href="#">بناء العلامة التجارية</a>
+            <a href="#">أسعار الشركات</a>
+          </div>
+          <div class="mega-col">
+            <h4>موارد</h4>
+            <a href="#">لماذا internly؟</a>
+            <a href="#">اطلب عرض</a>
+            <a href="#">تواصل مع المبيعات</a>
+          </div>
+        </div>
+      </li>
+      <li data-dropdown="universities">
+        <a href="#">الجامعات</a>
+        <div class="mega-dropdown" id="dd-universities">
+          <div class="mega-promo">
+            <div class="mega-promo-badge"><img src="assets/logo.png" alt="internly"></div>
+            <p class="mega-promo-text">أدوات متكاملة لمراكز التوظيف في الجامعات لمتابعة نجاح طلابها.</p>
+            <a href="#" class="mega-promo-link">اطلب عرض <span>→</span></a>
+          </div>
+          <div class="mega-col">
+            <h4>الحلول</h4>
+            <a href="#">شبكة الشراكات</a>
+            <a href="#">متابعة نجاح الطلاب</a>
+            <a href="#">Bootcamps مشتركة</a>
+          </div>
+          <div class="mega-col">
+            <h4>موارد</h4>
+            <a href="#">أدوات التسويق</a>
+            <a href="#">قصص جامعات</a>
+            <a href="#">اطلب عرض</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-login" id="btnLogin">تسجيل دخول</a>
+      <a href="signup.html" class="btn-signup" id="btnSignup">سجّل مجاناً</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════
+     HERO — Dual Audience (No search)
+════════════════════════════════════ -->
+<section class="hero">
+  <div class="aurora-bg" aria-hidden="true">
+    <div class="aurora-glow">
+      <div class="blob" style="width:60%;height:52%;right:6%;top:-10%;background:radial-gradient(ellipse at 55% 45%,#3B6AEF 0%,#9B5DE5 70%,transparent 76%)"></div>
+      <div class="blob" style="width:54%;height:48%;left:48%;top:-14%;background:radial-gradient(ellipse at 50% 50%,#9B5DE5 0%,#3B6AEF 52%,transparent 78%)"></div>
+      <div class="blob" style="width:64%;height:48%;right:20%;top:26%;background:radial-gradient(ellipse at 48% 55%,#3B6AEF 0%,#7C8FFF 48%,transparent 76%)"></div>
+      <div class="blob" style="width:48%;height:44%;left:56%;top:30%;background:radial-gradient(ellipse at 52% 48%,#9B5DE5 0%,#A78BFA 78%,transparent 80%)"></div>
+      <div class="blob" style="width:42%;height:38%;right:34%;top:8%;background:radial-gradient(ellipse at 50% 50%,#7C8FFF 0%,#9B5DE5 70%,transparent 78%)"></div>
+    </div>
+    <div class="aurora-mask"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-center">
+      <h1 class="hero-title-centered">
+        <span class="hero-line">ابدأ مسيرتك.</span>
+        <span class="hero-line">من غير وعود كدابة.</span>
+      </h1>
+      <p class="hero-subtitle">انضم لشبكة مصر الموثّقة — اللي بتوصل شباب Gen Z الطموح بشركات حقيقية في تدريبات منظمة ومدروسة.</p>
+      <div class="hero-dual-cta">
+        <a href="signup.html" class="btn-hero-primary" id="heroStudent">أنا طالب</a>
+        <a href="signup.html" class="btn-hero-secondary" id="heroEmployer">أنا صاحب عمل</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     ANIMATED COUNTERS (Social Proof)
+════════════════════════════════════ -->
+<section class="counters-section">
+  <div class="counters-inner">
+    <div class="counter-item fade-in">
+      <span class="counter-icon">🎓</span>
+      <div class="counter-num-row">
+        <span class="counter-num" data-target="120">0</span><span class="counter-plus">+</span>
+      </div>
+      <span class="counter-label">طالب مسجّل</span>
+    </div>
+    <div class="counter-divider"></div>
+    <div class="counter-item fade-in">
+      <span class="counter-icon">🏢</span>
+      <div class="counter-num-row">
+        <span class="counter-num" data-target="5">0</span>
+      </div>
+      <span class="counter-label">شركات شريكة</span>
+    </div>
+    <div class="counter-divider"></div>
+    <div class="counter-item fade-in">
+      <span class="counter-icon">💼</span>
+      <div class="counter-num-row">
+        <span class="counter-num" data-target="50">0</span><span class="counter-plus">+</span>
+      </div>
+      <span class="counter-label">فرصة عمل بالساعة</span>
+    </div>
+    <div class="counter-divider"></div>
+    <div class="counter-item fade-in">
+      <span class="counter-icon">🤖</span>
+      <div class="counter-num-row">
+        <span class="counter-tag">قريباً</span>
+      </div>
+      <span class="counter-label">مطابقة ذكية بالـ AI</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     THREE PILLARS
+════════════════════════════════════ -->
+<section class="pillars-section" id="pillars">
+  <div class="pillars-inner">
+    <h2 class="pillars-headline">ليه internly مختلفة؟</h2>
+    <p class="pillars-sub">مش مجرد موقع وظايف. إحنا بنغيّر ثقافة التدريب في مصر.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card fade-in">
+        <div class="pillar-icon">✅</div>
+        <h3 class="pillar-title">فرص موثّقة ١٠٠%</h3>
+        <p class="pillar-desc">خلصنا على ثقافة "السبوبة". كل تدريب عندنا متراجع ومضمون يديك خبرة حقيقية — مش شاي وقهوة.</p>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-icon">🤖</div>
+        <h3 class="pillar-title">مطابقة ذكية <span class="coming-soon-badge">قريباً</span></h3>
+        <p class="pillar-desc">نظام AI بيفهم مهاراتك وبيوصلك بالفرص المناسبة ليك في ثواني. حالياً عندنا +٥٠ فرصة AI بالساعة.</p>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-icon">🛂</div>
+        <h3 class="pillar-title">الباسبور المهني</h3>
+        <p class="pillar-desc">بروفايل رقمي بيسجّل كل حاجة — مهاراتك، تقييمات المينتورز، وخبراتك خطوة بخطوة. زي جواز سفر لمسيرتك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SPLIT AUDIENCE (Students vs Employers)
+════════════════════════════════════ -->
+<section class="split-audience">
+  <div class="split-card split-students">
+    <div class="split-content">
+      <span class="split-tag">🎓 للطلاب والخريجين</span>
+      <h3 class="split-title">اكتشف فرصتك الجاية</h3>
+      <p class="split-desc">تدريبات موثّقة، مينتورشيب من محترفين، وأدوات تطوير مهارات تساعدك تبدأ مسيرتك صح.</p>
+      <ul class="split-features">
+        <li>✓ تدريبات متراجعة ومضمونة</li>
+        <li>✓ مينتورشيب من خبراء الصناعة</li>
+        <li>✓ الباسبور المهني الرقمي</li>
+      </ul>
+      <a href="signup.html" class="btn-split-primary">اكتشف الفرص</a>
+    </div>
+  </div>
+  <div class="split-card split-employers">
+    <div class="split-content">
+      <span class="split-tag">🏢 لأصحاب العمل</span>
+      <h3 class="split-title">وظّف أحسن المواهب</h3>
+      <p class="split-desc">متدربين متقيمين وجاهزين، توظيف أسرع، وتكلفة أقل بكتير من الطرق التقليدية.</p>
+      <ul class="split-features">
+        <li>✓ متدربين متقيمين مسبقاً</li>
+        <li>✓ عملية توظيف أسرع ٣×</li>
+        <li>✓ تكلفة توظيف أقل بكتير</li>
+      </ul>
+      <a href="signup.html" class="btn-split-secondary">انشر تدريب</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     SCROLL-TRIGGERED FEATURES
+════════════════════════════════════ -->
+<section class="scroll-features" id="features">
+  <div class="scroll-features-inner">
+    <h2 class="scroll-features-headline">إزاي internly بتشتغل؟</h2>
+    <div class="scroll-features-container">
+      <div class="scroll-visual">
+        <div class="scroll-mockup mockup-hired active" data-tab="hired">
+          <div class="mock-chat">
+            <p class="mock-chat-date">الثلاثاء ١٩ أغسطس — ٢:١٨ م</p>
+            <div class="mock-chat-bubble">
+              <div class="sender"><div class="sender-avatar"></div><span class="sender-name">سارة من HR</span></div>
+              <p>أهلاً أحمد،<br><br>شفنا البروفايل بتاعك، ومؤهلاتك مناسبة جداً لتدريب إدارة المشاريع عندنا.<br><br>لو عندك أي أسئلة، كلمنا.</p>
+            </div>
+            <div class="mock-job-card">
+              <div class="job-company"><div class="company-icon"></div><div class="company-info"><strong>شركة سارال تك</strong><span>تكنولوجيا</span></div></div>
+              <div class="job-title">مدير شراكات — تدريب</div>
+              <div class="job-meta">١٥-٢٥ ألف ج/سنة · دوام كامل</div>
+              <div class="job-location">القاهرة (هجين) · من ٤ أيام</div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-mockup mockup-ai" data-tab="ai">
+          <div class="mock-chat">
+            <p class="mock-chat-date">مهمة جديدة متاحة</p>
+            <div class="mock-chat-bubble">
+              <div class="sender"><div class="sender-avatar"></div><span class="sender-name">internly AI</span></div>
+              <p>مهمة Data Labeling جديدة متاحة ليك!<br><br>المطلوب: تقييم ردود AI باللغة العربية.<br>مش محتاج خبرة سابقة — هندربك.<br><br>المقابل: ٢٥٠ ج / ساعة · Remote</p>
+            </div>
+            <div class="mock-job-card">
+              <div class="job-company"><div class="company-icon"></div><div class="company-info"><strong>internly AI Tasks</strong><span>ذكاء اصطناعي</span></div></div>
+              <div class="job-title">AI Data Trainer — Arabic</div>
+              <div class="job-meta">مرن · عن بُعد · فوري</div>
+              <div class="job-location">من أي مكان · متاح دلوقتي</div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-mockup mockup-grow" data-tab="grow">
+          <div class="mock-chat">
+            <p class="mock-chat-date">فعاليات قادمة</p>
+            <div class="mock-chat-bubble">
+              <div class="sender"><div class="sender-avatar"></div><span class="sender-name">internly Events</span></div>
+              <p>🎯 Career Fair القاهرة — ١٥ يونيو<br>+٤٠ شركة بتحضر<br><br>📚 ورشة بناء البورتفوليو — ٢٢ يونيو<br>مع مينتور من Google</p>
+            </div>
+            <div class="mock-job-card">
+              <div class="job-company"><div class="company-icon"></div><div class="company-info"><strong>internly Community</strong><span>فعاليات</span></div></div>
+              <div class="job-title">+١٢ ألف طالب مسجّل</div>
+              <div class="job-meta">شبكة مهنية نشطة</div>
+              <div class="job-location">القاهرة · الإسكندرية · أونلاين</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-tabs">
+        <div class="scroll-tab-item active" data-target="hired">
+          <h3>لاقي تدريبك</h3>
+          <p>اكتشف فرص تدريب موثّقة ومخصصة ليك. نظام المطابقة بيوصلك بالشركات المناسبة — من غير ما تضيّع وقتك في فرص وهمية.</p>
+          <a href="signup.html" class="scroll-tab-link">ابدأ دلوقتي</a>
+        </div>
+        <div class="scroll-tab-item" data-target="ai">
+          <h3>اشتغل في مهام AI</h3>
+          <p>اتقاضى مقابل مهام بسيطة بالساعة في مجال الذكاء الاصطناعي — عندنا +٥٠ فرصة متاحة دلوقتي. مش محتاج خبرة سابقة.</p>
+          <a href="signup.html" class="scroll-tab-link">اعرف أكتر</a>
+        </div>
+        <div class="scroll-tab-item" data-target="grow">
+          <h3>ابني مسيرتك</h3>
+          <p>خد نصائح حقيقية، شارك في فعاليات، واتواصل مع مينتورز من أكبر الشركات. مجتمع مهني نشط بيساعدك تكبر.</p>
+          <a href="signup.html" class="scroll-tab-link">تواصل دلوقتي</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     WAITLIST CTA
+════════════════════════════════════ -->
+<section class="waitlist-section">
+  <div class="waitlist-inner">
+    <h2 class="waitlist-title">
+      <span class="cta-line">انضم لنظام</span>
+      <span class="cta-line">internly النهاردة</span>
+    </h2>
+    <p class="waitlist-sub">كن من أوائل المستفيدين — سجّل في قائمة الانتظار وهنبلّغك أول ما نفتح.</p>
+    <form class="waitlist-form" id="waitlistInlineForm">
+      <div class="waitlist-form-row">
+        <input type="email" class="waitlist-input" placeholder="البريد الإلكتروني بتاعك" required>
+        <button type="submit" class="waitlist-btn">انضم دلوقتي</button>
+      </div>
+    </form>
+    <p class="waitlist-note">🔒 مش هنشارك بياناتك مع حد. وعد.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4 class="footer-col-title">للطلاب</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">تصفّح التدريبات</a></li>
+        <li><a href="#">الباسبور المهني</a></li>
+        <li><a href="#">مينتورشيب</a></li>
+        <li><a href="#">تقييم المهارات</a></li>
+        <li><a href="#">مهام AI بالساعة</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">لأصحاب العمل</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">انشر تدريب</a></li>
+        <li><a href="#">الأسعار</a></li>
+        <li><a href="#">اطلب عرض</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">الجامعات</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">شبكة الشراكات</a></li>
+        <li><a href="#">Bootcamps مشتركة</a></li>
+        <li><a href="#">اطلب عرض</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">الشركة</h4>
+      <ul class="footer-col-links">
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="#">انضم لفريقنا</a></li>
+        <li><a href="#">المدونة</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">الدعم</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">مركز المساعدة</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+        <li><a href="#">الشروط والأحكام</a></li>
+        <li><a href="#">سياسة الخصوصية</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div class="footer-brand"><img src="assets/logo.png" alt="internly" class="footer-logo-img"></div>
+      <div class="footer-legal">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">شروط الاستخدام</a>
+      </div>
+      <p class="footer-copyright">© 2025 internly. جميع الحقوق محفوظة</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WAITLIST MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-icon">🚀</div>
+    <h3 class="modal-title">انضم لقائمة الانتظار</h3>
+    <p class="modal-desc">كن من أوائل المستفيدين عند إطلاق internly</p>
+    <form id="waitlistForm" class="modal-form">
+      <input type="text" class="modal-input" placeholder="الاسم الكامل" required>
+      <input type="email" class="modal-input" placeholder="البريد الإلكتروني" required>
+      <input type="tel" class="modal-input" placeholder="رقم الهاتف (اختياري)">
+      <button type="submit" class="modal-btn">سجّل الآن</button>
+    </form>
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">✅</div>
+      <h3>تم التسجيل بنجاح!</h3>
+      <p>سنتواصل معك قريباً عند الإطلاق</p>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">↑</button>
+
+<script src="js/main.js"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a14f5feda221a1c3a6a4a73/1jpgu1qs7';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
