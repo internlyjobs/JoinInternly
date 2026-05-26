@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سجّل مجاناً – internly</title>
+<meta name="description" content="انضم لـ internly — سجّل في قائمة الانتظار وكن من أوائل المستفيدين.">
+<meta name="theme-color" content="#0a0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/signup.css">
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+<div class="signup-page">
+
+  <!-- LEFT: Brand Visual -->
+  <div class="signup-visual">
+    <!-- Animated background blobs -->
+    <div class="visual-blobs" aria-hidden="true">
+      <div class="vblob vblob-1"></div>
+      <div class="vblob vblob-2"></div>
+      <div class="vblob vblob-3"></div>
+    </div>
+
+    <!-- Floating badges -->
+    <div class="floating-badges" aria-hidden="true">
+      <div class="fbadge fbadge-1">✅ تدريبات موثّقة</div>
+      <div class="fbadge fbadge-2">🤖 +٥٠ فرصة AI</div>
+      <div class="fbadge fbadge-3">🎓 +١٢٠ طالب</div>
+      <div class="fbadge fbadge-4">🏢 ٥ شركات شريكة</div>
+    </div>
+
+    <div class="visual-content">
+      <a href="index.html" class="visual-logo">
+        <img src="assets/logo.png" alt="internly">
+      </a>
+      <h1 class="visual-headline">ابدأ مسيرتك<br>المهنية صح.</h1>
+      <p class="visual-sub">انضم لشبكة مصر الموثّقة للتدريبات المنظمة — من غير سبوبة.</p>
+
+      <!-- Stats row -->
+      <div class="visual-stats">
+        <div class="vstat">
+          <span class="vstat-num">+١٢٠</span>
+          <span class="vstat-label">طالب مسجّل</span>
+        </div>
+        <div class="vstat-divider"></div>
+        <div class="vstat">
+          <span class="vstat-num">+٥٠</span>
+          <span class="vstat-label">فرصة بالساعة</span>
+        </div>
+        <div class="vstat-divider"></div>
+        <div class="vstat">
+          <span class="vstat-num">٥</span>
+          <span class="vstat-label">شركات شريكة</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Registration Form -->
+  <div class="signup-form-side">
+    <div class="form-container">
+
+      <!-- Back to home -->
+      <a href="index.html" class="back-link">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        العودة للرئيسية
+      </a>
+
+      <!-- Form header -->
+      <div class="form-header">
+        <div class="form-icon-wrap">
+          <div class="form-icon-ring"></div>
+          <span class="form-icon">🚀</span>
+        </div>
+        <h2 class="form-title">انضم لـ internly</h2>
+        <p class="form-desc">سجّل في قائمة الانتظار وكن من أوائل المستفيدين عند الإطلاق</p>
+      </div>
+
+      <!-- User type selector -->
+      <div class="user-type-selector">
+        <button class="type-btn active" data-type="student" id="typeStudent">
+          <span class="type-icon">🎓</span>
+          <span class="type-label">أنا طالب</span>
+        </button>
+        <button class="type-btn" data-type="employer" id="typeEmployer">
+          <span class="type-icon">🏢</span>
+          <span class="type-label">أنا صاحب عمل</span>
+        </button>
+      </div>
+
+      <!-- Form -->
+      <form id="signupForm" class="signup-form" autocomplete="off">
+        <div class="form-group anim-field" style="--delay: 0">
+          <label class="form-label" for="fullName">الاسم الكامل</label>
+          <div class="input-wrap">
+            <input type="text" id="fullName" class="form-input" placeholder="مثلاً: أحمد محمد" required>
+            <span class="input-icon">👤</span>
+          </div>
+        </div>
+
+        <div class="form-group anim-field" style="--delay: 1">
+          <label class="form-label" for="email">البريد الإلكتروني</label>
+          <div class="input-wrap">
+            <input type="email" id="email" class="form-input" placeholder="ahmed@example.com" required>
+            <span class="input-icon">📧</span>
+          </div>
+        </div>
+
+        <div class="form-group anim-field" style="--delay: 1.5">
+          <label class="form-label" for="password">كلمة المرور</label>
+          <div class="input-wrap">
+            <input type="password" id="password" class="form-input" placeholder="••••••••" required minlength="6">
+            <span class="input-icon">🔒</span>
+          </div>
+        </div>
+
+        <div class="form-group anim-field" style="--delay: 2">
+          <label class="form-label" for="phone">رقم الهاتف <span class="optional">(اختياري)</span></label>
+          <div class="input-wrap">
+            <input type="tel" id="phone" class="form-input" placeholder="01xxxxxxxxx">
+            <span class="input-icon">📱</span>
+          </div>
+        </div>
+
+        <!-- Student-only field -->
+        <div class="form-group anim-field student-field" style="--delay: 3">
+          <label class="form-label" for="university">الجامعة / الكلية</label>
+          <div class="input-wrap">
+            <input type="text" id="university" class="form-input" placeholder="مثلاً: كلية الهندسة — جامعة القاهرة">
+            <span class="input-icon">🏛️</span>
+          </div>
+        </div>
+
+        <!-- Employer-only field -->
+        <div class="form-group anim-field employer-field" style="--delay: 3; display: none;">
+          <label class="form-label" for="company">اسم الشركة</label>
+          <div class="input-wrap">
+            <input type="text" id="company" class="form-input" placeholder="مثلاً: شركة سارال تك">
+            <span class="input-icon">🏢</span>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn anim-field" style="--delay: 4" id="submitBtn">
+          <span class="submit-text">سجّل في قائمة الانتظار</span>
+          <span class="submit-loader" style="display:none">
+            <span class="dot-pulse"></span>
+          </span>
+        </button>
+
+        <p class="form-note anim-field" style="--delay: 5">🔒 بياناتك في أمان تام. مش هنشاركها مع حد.</p>
+
+        <p class="switch-link anim-field" style="--delay: 6">
+          عندك حساب؟ <a href="login.html">سجّل دخول</a>
+        </p>
+      </form>
+
+      <!-- Success State -->
+      <div class="success-state" id="successState" style="display:none">
+        <div class="success-checkmark">
+          <svg class="checkmark-svg" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+        </div>
+        <h3 class="success-title">تم التسجيل بنجاح! 🎉</h3>
+        <p class="success-desc">أهلاً بيك في internly. هنتواصل معاك قريباً عند الإطلاق.</p>
+        <div class="success-next">
+          <a href="index.html" class="success-btn">العودة للرئيسية</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script type="module">
+  import { auth, db } from './js/firebase-init.js';
+  import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  // User type toggle
+  const typeBtns = document.querySelectorAll('.type-btn');
+  const studentFields = document.querySelectorAll('.student-field');
+  const employerFields = document.querySelectorAll('.employer-field');
+  let selectedType = 'student';
+
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      selectedType = btn.dataset.type;
+      studentFields.forEach(f => f.style.display = selectedType === 'student' ? '' : 'none');
+      employerFields.forEach(f => f.style.display = selectedType === 'employer' ? '' : 'none');
+    });
+  });
+
+  // Form submission
+  const form = document.getElementById('signupForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successState = document.getElementById('successState');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const phone = document.getElementById('phone').value;
+    const university = document.getElementById('university').value;
+    const company = document.getElementById('company').value;
+
+    // Show loading
+    submitBtn.querySelector('.submit-text').style.display = 'none';
+    submitBtn.querySelector('.submit-loader').style.display = 'flex';
+    submitBtn.disabled = true;
+
+    try {
+      // 1. Create User in Auth
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // 2. Save profile in Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        fullName,
+        email,
+        phone,
+        type: selectedType,
+        university: selectedType === 'student' ? university : '',
+        company: selectedType === 'employer' ? company : '',
+        createdAt: new Date().toISOString()
+      });
+
+      // 3. Show Success State
+      form.style.opacity = '0';
+      form.style.transform = 'translateY(-20px)';
+      form.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      document.querySelector('.user-type-selector').style.opacity = '0';
+      document.querySelector('.user-type-selector').style.transition = 'opacity 0.3s ease';
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.querySelector('.user-type-selector').style.display = 'none';
+        successState.style.display = 'flex';
+        void successState.offsetWidth; // trigger reflow
+        successState.classList.add('visible');
+      }, 400);
+
+    } catch (error) {
+      console.error("Error signing up:", error);
+      alert("حدث خطأ أثناء التسجيل: " + error.message);
+      submitBtn.querySelector('.submit-text').style.display = 'block';
+      submitBtn.querySelector('.submit-loader').style.display = 'none';
+      submitBtn.disabled = false;
+    }
+  });
+
+  // Input focus animations
+  document.querySelectorAll('.form-input').forEach(input => {
+    input.addEventListener('focus', () => {
+      input.closest('.input-wrap').classList.add('focused');
+    });
+    input.addEventListener('blur', () => {
+      input.closest('.input-wrap').classList.remove('focused');
+      if (input.value) {
+        input.closest('.input-wrap').classList.add('filled');
+      } else {
+        input.closest('.input-wrap').classList.remove('filled');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
