@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internly – شبكة التدريب الذكية في مصر</title>
+<meta name="description" content="Internly — أكبر شبكة تدريب ذكية في مصر. نوصّلك بفرص تدريب موثّقة ومدعومة بالذكاء الاصطناعي.">
+<meta name="theme-color" content="#0a0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div class="loader-screen" id="loader">
+  <div class="loader-logo"><img src="assets/logo.png" alt="Internly"></div>
+</div>
+
+<!-- ═══════════════════════════════════
+     FLOATING PILL NAVBAR
+════════════════════════════════════ -->
+<nav class="pill-nav" id="mainNav">
+  <div class="nav-container">
+    <div class="nav-logo"><a href="#"><img src="assets/logo.png" alt="Internly"></a></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">وظّف دلوقتي</a></li>
+      <li><a href="#">لاقي تدريب</a></li>
+      <li><a href="#">المراكز المهنية</a></li>
+      <li><a href="#">Internly AI</a></li>
+      <li><a href="about.html">من نحن</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-login" id="btnLogin">تسجيل دخول</button>
+      <button class="btn-signup" id="btnSignup">إنشاء حساب</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════
+     HERO SECTION
+════════════════════════════════════ -->
+<section class="hero">
+  <!-- Aurora Background -->
+  <div class="aurora-bg" aria-hidden="true">
+    <div class="aurora-glow">
+      <div class="blob" style="width:60%;height:52%;right:6%;top:-10%;background:radial-gradient(ellipse at 55% 45%,#7AF3FF 0%,#D3FB52 70%,transparent 76%)"></div>
+      <div class="blob" style="width:54%;height:48%;left:48%;top:-14%;background:radial-gradient(ellipse at 50% 50%,#D3FB52 0%,#7AF3FF 52%,transparent 78%)"></div>
+      <div class="blob" style="width:64%;height:48%;right:20%;top:26%;background:radial-gradient(ellipse at 48% 55%,#7AF3FF 0%,#D3FB52 48%,transparent 76%)"></div>
+      <div class="blob" style="width:48%;height:44%;left:56%;top:30%;background:radial-gradient(ellipse at 52% 48%,#D3FB52 0%,#7AF3FF 78%,transparent 80%)"></div>
+      <div class="blob" style="width:42%;height:38%;right:34%;top:8%;background:radial-gradient(ellipse at 50% 50%,#7AF3FF 0%,#D3FB52 70%,transparent 78%)"></div>
+    </div>
+    <div class="aurora-mask"></div>
+  </div>
+
+  <div class="hero-content">
+    <!-- Desktop: 12-col grid with title spanning 9 cols, stats spanning 3 cols -->
+    <div class="hero-grid">
+      <h1 class="hero-title">
+        <span class="hero-line">لاقي</span>
+        <span class="hero-line">تدريبك الجاي</span>
+      </h1>
+
+      <div class="hero-stats-col">
+        <span class="hero-stat-line">+١ مليون شركة <span class="muted">جاهزة توظّف.</span></span>
+        <span class="hero-stat-line">+٥٠٠ فرصة تدريب <span class="muted">مفتوحة ليك.</span></span>
+      </div>
+
+      <div class="hero-search">
+        <div class="hero-search-wrap">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M14.6667 2.66669C21.2942 2.66669 26.6667 8.03927 26.6667 14.6667C26.6667 17.6203 25.5966 20.3221 23.8269 22.4128L30.0398 28.6257C30.4303 29.0162 30.4303 29.6492 30.0398 30.0397C29.6493 30.4303 29.0163 30.4303 28.6257 30.0397L22.4128 23.8268C20.3222 25.5965 17.6204 26.6667 14.6667 26.6667C8.03933 26.6667 2.66675 21.2941 2.66675 14.6667C2.66675 8.03927 8.03933 2.66669 14.6667 2.66669ZM14.6667 4.66669C9.1439 4.66669 4.66675 9.14384 4.66675 14.6667C4.66675 20.1895 9.1439 24.6667 14.6667 24.6667C20.1896 24.6667 24.6667 20.1895 24.6667 14.6667C24.6667 9.14384 20.1896 4.66669 14.6667 4.66669Z" fill="currentColor"/></svg>
+          <input type="text" id="heroSearchInput" placeholder="" maxlength="65" autocomplete="off">
+          <button type="button" class="hero-search-btn" aria-label="بحث" disabled>
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="20" viewBox="0 0 13 20" fill="none"><path d="M12.6972 6.04479L6.86389 0.211458C6.58194 -0.0704861 6.11528 -0.0704861 5.83333 0.211458L0 6.04479L1.03056 7.07535L5.61944 2.48646V19.199H7.07778V2.48646L11.6667 7.07535L12.6972 6.04479Z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-suggestions-area">
+        <p class="suggestions-label">
+          <span class="suggestions-bold">مش عارف تبدأ منين؟</span>
+          <span class="suggestions-sub">جرّب الاقتراحات دي:</span>
+        </p>
+        <div class="chips-row">
+          <a href="#" class="chip-btn">AI trainer</a>
+          <button class="chip-btn">تدريب صيفي</button>
+          <button class="chip-btn">عمل عن بُعد</button>
+          <button class="chip-btn">دوام كامل</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     EMPLOYERS MARQUEE
+════════════════════════════════════ -->
+<section class="companies-section">
+  <div class="companies-label">
+    <span class="dot"></span>
+    <p>شركات بتوظّف على Internly</p>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="company-logo">Vodafone Egypt</span>
+      <span class="company-logo">Orange</span>
+      <span class="company-logo">بنك مصر</span>
+      <span class="company-logo">CIB</span>
+      <span class="company-logo">IBM Egypt</span>
+      <span class="company-logo">Microsoft</span>
+      <span class="company-logo">Amazon</span>
+      <span class="company-logo">Nestlé</span>
+      <span class="company-logo">Procter & Gamble</span>
+      <span class="company-logo">البنك الأهلي</span>
+      <span class="company-logo">Telecom Egypt</span>
+      <span class="company-logo">Siemens</span>
+      <!-- Duplicate for infinite scroll -->
+      <span class="company-logo">Vodafone Egypt</span>
+      <span class="company-logo">Orange</span>
+      <span class="company-logo">بنك مصر</span>
+      <span class="company-logo">CIB</span>
+      <span class="company-logo">IBM Egypt</span>
+      <span class="company-logo">Microsoft</span>
+      <span class="company-logo">Amazon</span>
+      <span class="company-logo">Nestlé</span>
+      <span class="company-logo">Procter & Gamble</span>
+      <span class="company-logo">البنك الأهلي</span>
+      <span class="company-logo">Telecom Egypt</span>
+      <span class="company-logo">Siemens</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     3 FEATURE CARDS — "The largest, most trusted network"
+════════════════════════════════════ -->
+<section class="features-section" id="features">
+  <div class="features-inner">
+    <h2 class="features-headline">أكبر وأوثق شبكة تدريب ذكية<br>في مصر والمنطقة</h2>
+
+    <div class="features-grid">
+      <!-- Card 1: Get hired → اتوظّف -->
+      <div class="feature-card fade-in" id="card-hired">
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">اتوظّف</h3>
+          <p class="feature-card-desc">اكتشف فرص تدريب مخصصة ليك وابني شبكة علاقات تساعدك توصل لحلمك.</p>
+          <a href="#" class="feature-card-link" id="linkGetStarted">ابدأ دلوقتي</a>
+        </div>
+        <div class="feature-card-visual">
+          <div class="card-mock card-mock-hired">
+            <div class="mock-header">
+              <div class="mock-avatar"></div>
+              <div class="mock-lines"><div class="mock-line w70"></div><div class="mock-line w40"></div></div>
+            </div>
+            <div class="mock-tags">
+              <span class="mock-tag tag-lime">تدريب صيفي</span>
+              <span class="mock-tag tag-cyan">عن بُعد</span>
+              <span class="mock-tag tag-purple">AI</span>
+            </div>
+            <div class="mock-bar"><div class="mock-bar-fill" style="width:78%"></div></div>
+            <div class="mock-line w90"></div>
+            <div class="mock-line w60"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Work with AI → اشتغل مع الذكاء الاصطناعي -->
+      <div class="feature-card fade-in" id="card-ai">
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">اشتغل مع AI</h3>
+          <p class="feature-card-desc">اتقاضى مقابل شغل مرن عن بُعد في مجال الذكاء الاصطناعي وابني مهارات مطلوبة — مش محتاج خبرة سابقة.</p>
+          <a href="#" class="feature-card-link" id="linkLearnMore">اعرف أكتر</a>
+        </div>
+        <div class="feature-card-visual">
+          <div class="card-mock card-mock-ai">
+            <div class="mock-ai-icon">🤖</div>
+            <div class="mock-line w80"></div>
+            <div class="mock-chips-row">
+              <span class="mock-chip">Python</span>
+              <span class="mock-chip">Prompt Engineering</span>
+              <span class="mock-chip">Data</span>
+            </div>
+            <div class="mock-bar"><div class="mock-bar-fill bar-purple" style="width:65%"></div></div>
+            <div class="mock-line w50"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Grow your career → طوّر مسيرتك -->
+      <div class="feature-card fade-in" id="card-grow">
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">طوّر مسيرتك</h3>
+          <p class="feature-card-desc">خد نصائح حقيقية، شارك في فعاليات تغيّر مسارك، واتواصل مع ناس تساعدك تتقدم.</p>
+          <a href="#" class="feature-card-link" id="linkConnect">تواصل دلوقتي</a>
+        </div>
+        <div class="feature-card-visual">
+          <div class="card-mock card-mock-grow">
+            <div class="mock-event">
+              <div class="mock-event-date"><span class="mock-day">١٥</span><span class="mock-month">يونيو</span></div>
+              <div class="mock-event-info"><div class="mock-line w80"></div><div class="mock-line w50"></div></div>
+            </div>
+            <div class="mock-event">
+              <div class="mock-event-date"><span class="mock-day">٢٢</span><span class="mock-month">يونيو</span></div>
+              <div class="mock-event-info"><div class="mock-line w70"></div><div class="mock-line w40"></div></div>
+            </div>
+            <div class="mock-bar"><div class="mock-bar-fill bar-lime" style="width:92%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     CTA — App Download / Final CTA
+════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">
+      <span class="cta-line">شبكة التدريب</span>
+      <span class="cta-line">الذكية في مصر</span>
+    </h2>
+    <div class="cta-btns">
+      <a href="#" class="btn-white" id="ctaRegister">سجّل مجاناً</a>
+      <a href="#" class="btn-ghost" id="ctaCompany">للشركات: تواصل معنا</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════
+     FOOTER — Multi-column links like Handshake
+════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <!-- Column 1: Students -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">الطلاب</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">مين بيوظّف</a></li>
+        <li><a href="#">نصائح مهنية</a></li>
+        <li><a href="#">Internly AI</a></li>
+        <li><a href="#">برنامج الزمالة</a></li>
+        <li><a href="#">الفرص المتاحة</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2: Employers -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">أصحاب العمل</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">الباقات والأسعار</a></li>
+        <li><a href="#">اطلب عرض</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Career Centers -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">المراكز المهنية</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">أدوات التسويق</a></li>
+        <li><a href="#">الأمان</a></li>
+        <li><a href="#">اطلب عرض</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Company -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">الشركة</h4>
+      <ul class="footer-col-links">
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="#">انضم لفريقنا</a></li>
+        <li><a href="#">الصحافة</a></li>
+        <li><a href="#">المدونة</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 5: Support -->
+    <div class="footer-col">
+      <h4 class="footer-col-title">الدعم</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">مركز المساعدة</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+        <li><a href="#">الشروط والأحكام</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Internly" class="footer-logo-img">
+      </div>
+      <div class="footer-legal">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">إمكانية الوصول</a>
+        <a href="#">شروط الاستخدام</a>
+      </div>
+      <p class="footer-copyright">© 2026 Internly. جميع الحقوق محفوظة</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WAITLIST MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" onclick="closeModal()">&times;</button>
+    <div class="modal-icon">🚀</div>
+    <h3 class="modal-title">انضم لقائمة الانتظار</h3>
+    <p class="modal-desc">كن من أوائل المستفيدين عند إطلاق Internly</p>
+    <form id="waitlistForm" class="modal-form">
+      <input type="text" class="modal-input" placeholder="الاسم الكامل" required id="nameInput">
+      <input type="email" class="modal-input" placeholder="البريد الإلكتروني" required id="emailInput">
+      <input type="tel" class="modal-input" placeholder="رقم الهاتف (اختياري)" id="phoneInput">
+      <button type="submit" class="modal-btn">سجّل الآن</button>
+    </form>
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">✅</div>
+      <h3>تم التسجيل بنجاح!</h3>
+      <p>سنتواصل معك قريباً عند الإطلاق</p>
+    </div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">↑</button>
+
+<script src="js/main.js"></script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a14f5feda221a1c3a6a4a73/1jpgu1qs7';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
