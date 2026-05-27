@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم – internly</title>
+<meta name="theme-color" content="#0a0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- Loading Shroud until Auth is verified -->
+<div id="dashboardLoading">
+  <div class="spinner"></div>
+  <p>جاري التحقق من هويتك...</p>
+</div>
+
+<div class="dashboard-layout" style="display:none;" id="dashboardApp">
+  
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="assets/logo.png" alt="internly">
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="#" class="active"><span class="nav-icon">🏠</span> الرئيسية</a></li>
+      <li id="navInbox" style="display:none;"><a href="#"><span class="nav-icon">📩</span> البريد الوارد</a></li>
+      <li id="navCalendar" style="display:none;"><a href="#"><span class="nav-icon">📅</span> التقويم</a></li>
+      <li id="navJobs" style="display:none;"><a href="#"><span class="nav-icon">💼</span> الفرص المتاحة</a></li>
+      <li id="navCandidates" style="display:none;"><a href="#"><span class="nav-icon">👥</span> المواهب</a></li>
+      <li id="navRecruitment" style="display:none;"><a href="#"><span class="nav-icon">📋</span> لوحة التوظيف</a></li>
+      <li id="navCV" style="display:none;"><a href="#"><span class="nav-icon">📄</span> إدارة السير الذاتية</a></li>
+      <li><a href="#"><span class="nav-icon">⚙️</span> الإعدادات</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <button class="logout-btn" id="logoutBtn">
+        <span class="nav-icon">🚪</span> تسجيل خروج
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="welcome-text">
+        <h1 id="welcomeName">أهلاً بيك <span class="emoji">👋</span></h1>
+        <p id="welcomeSub">جاري تحميل بياناتك...</p>
+      </div>
+      <div class="user-profile">
+        <div class="user-info">
+          <span class="user-name" id="topName">...</span>
+          <span class="user-type" id="topRole">...</span>
+        </div>
+        <div class="user-avatar" id="topAvatar">I</div>
+      </div>
+    </header>
+
+    <!-- CONTENT SECTIONS -->
+    
+    <!-- 1. HUSTLE MODE BANNER (For non-sponsored, non-subscribed students) -->
+    <div class="hustle-banner" id="hustleBanner" style="display:none;">
+      <div class="hustle-content">
+        <h3>وضع الـ Hustle 🚀</h3>
+        <p>افتح فرص حصرية، مهام بفلوس أكتر، ومينتورشيب 1-on-1 بسعر <span class="hustle-price">٢٠٠ ج / الشهر</span>.</p>
+      </div>
+      <button class="btn-hustle" onclick="alert('جاري توجيهك لصفحة الدفع...')">اشترك دلوقتي</button>
+    </div>
+
+    <!-- STUDENT DASHBOARD -->
+    <div class="widgets-grid" id="studentDashboard" style="display:none;">
+      
+      <!-- Passport Card -->
+      <div class="glass-card passport-card" id="passportCard">
+        <div class="passport-header">
+          <div>
+            <h3 class="card-title">🛂 الباسبور المهني</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin:0;" id="passportUni">...</p>
+          </div>
+          <span class="badge badge-basic" id="passportBadge">internly Basic</span>
+        </div>
+        
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>اكتمال البروفايل</span>
+            <span>٤٠٪</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Tasks List -->
+      <div class="glass-card" id="tasksList">
+        <h3 class="card-title">💼 أحدث الفرص ومهام الـ AI</h3>
+        
+        <div class="job-item">
+          <div class="job-info">
+            <h4>مراجعة نصوص ذكاء اصطناعي</h4>
+            <p>شركة سارال تك • ٣٠٠ ج / المهمة</p>
+          </div>
+          <a href="#" class="job-action">تقديم</a>
+        </div>
+
+        <div class="job-item job-locked" id="lockedTask1">
+          <div class="job-info">
+            <h4>Data Annotation (متقدم) <span style="color:var(--purple); font-size:0.75rem;">⭐ حصري</span></h4>
+            <p>شركة AI Startup • ٨٠٠ ج / المهمة</p>
+          </div>
+          <span class="job-action">🔒 مقفول</span>
+        </div>
+        
+        <div class="job-item" id="sponsoredTask" style="display:none;">
+          <div class="job-info">
+            <h4>جلسة توجيه (Mentorship) مجانية</h4>
+            <p>مقدمة خصيصاً لطلاب <span id="sponsorNameLabel">الجامعة</span> 🎓</p>
+          </div>
+          <a href="#" class="job-action">احجز ميعادك</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMPLOYER DASHBOARD -->
+    <div class="employer-dashboard" id="employerDashboard" style="display:none;">
+      
+      <!-- Row 1: 4 Stat Cards -->
+      <div class="ed-row ed-stats-row">
+        <div class="glass-card ed-stat">
+          <div class="ed-stat-top">
+            <span class="ed-stat-label">إجمالي المتقدمين</span>
+            <span class="ed-stat-icon" style="background:rgba(59,106,239,0.12); color:#3B6AEF;">📄</span>
+          </div>
+          <div class="ed-stat-num">1,534</div>
+          <div class="ed-stat-mini-chart">
+            <svg viewBox="0 0 80 30" preserveAspectRatio="none"><path d="M0,20 Q10,5 20,15 Q30,25 40,10 Q50,20 60,8 Q70,15 80,5" fill="none" stroke="#4ade80" stroke-width="2"/></svg>
+          </div>
+          <div class="ed-stat-trend positive">📈 +12.50% الشهر ده</div>
+        </div>
+        <div class="glass-card ed-stat">
+          <div class="ed-stat-top">
+            <span class="ed-stat-label">المقبولين مبدئياً</span>
+            <span class="ed-stat-icon" style="background:rgba(155,93,229,0.12); color:#9B5DE5;">⭐</span>
+          </div>
+          <div class="ed-stat-num">869</div>
+          <div class="ed-stat-mini-chart">
+            <svg viewBox="0 0 80 30" preserveAspectRatio="none"><path d="M0,10 Q10,15 20,8 Q30,20 40,12 Q50,25 60,18 Q70,22 80,20" fill="none" stroke="#f87171" stroke-width="2"/></svg>
+          </div>
+          <div class="ed-stat-trend negative">📉 -1.90% الشهر ده</div>
+        </div>
+        <div class="glass-card ed-stat">
+          <div class="ed-stat-top">
+            <span class="ed-stat-label">تم التعيين</span>
+            <span class="ed-stat-icon" style="background:rgba(74,222,128,0.12); color:#4ade80;">✅</span>
+          </div>
+          <div class="ed-stat-num">236</div>
+          <div class="ed-stat-mini-chart">
+            <svg viewBox="0 0 80 30" preserveAspectRatio="none"><path d="M0,25 Q10,20 20,18 Q30,15 40,12 Q50,10 60,8 Q70,6 80,3" fill="none" stroke="#4ade80" stroke-width="2"/></svg>
+          </div>
+          <div class="ed-stat-trend positive">📈 +8.45% الشهر ده</div>
+        </div>
+        <div class="glass-card ed-stat">
+          <div class="ed-stat-top">
+            <span class="ed-stat-label">تم الرفض</span>
+            <span class="ed-stat-icon" style="background:rgba(248,113,113,0.12); color:#f87171;">❌</span>
+          </div>
+          <div class="ed-stat-num">1,534</div>
+          <div class="ed-stat-mini-chart">
+            <svg viewBox="0 0 80 30" preserveAspectRatio="none"><path d="M0,5 Q10,10 20,8 Q30,15 40,18 Q50,20 60,22 Q70,25 80,28" fill="none" stroke="#f87171" stroke-width="2"/></svg>
+          </div>
+          <div class="ed-stat-trend negative">📉 -2.80% الشهر ده</div>
+        </div>
+      </div>
+
+      <!-- Row 2: Applications Chart + Applicant Resources Donut + Department Bars -->
+      <div class="ed-row ed-charts-row">
+        <!-- Applications Line Chart -->
+        <div class="glass-card ed-chart-wide">
+          <div class="ed-card-header">
+            <h3>التقديمات</h3>
+            <select class="ed-select"><option>١٣-١٨ مايو</option></select>
+          </div>
+          <div class="ed-chart-canvas-wrap">
+            <canvas id="edApplicationsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Applicant Resources Donut -->
+        <div class="glass-card ed-chart-sm">
+          <div class="ed-card-header">
+            <h3>مصادر المتقدمين</h3>
+            <button class="emp-icon-btn">⋮</button>
+          </div>
+          <div class="ed-donut-wrap">
+            <canvas id="edDonutChart"></canvas>
+          </div>
+          <div class="ed-donut-legend">
+            <span><span class="dot c1"></span> لوحات الوظائف (300)</span>
+            <span><span class="dot c2"></span> سوشيال ميديا (300)</span>
+            <span><span class="dot c3"></span> ترشيحات موظفين (200)</span>
+            <span><span class="dot c4"></span> وكالات توظيف (150)</span>
+          </div>
+        </div>
+
+        <!-- Application by Department -->
+        <div class="glass-card ed-chart-sm">
+          <div class="ed-card-header">
+            <h3>حسب القسم</h3>
+            <select class="ed-select-mini"><option>شائع</option></select>
+          </div>
+          <div class="ed-dept-bars">
+            <div class="ed-dept">
+              <div class="ed-dept-label"><span>هندسة</span><span>90%</span></div>
+              <div class="ed-dept-bar"><div class="ed-dept-fill" style="width:90%; background:var(--accent);"></div></div>
+            </div>
+            <div class="ed-dept">
+              <div class="ed-dept-label"><span>تسويق</span><span>80%</span></div>
+              <div class="ed-dept-bar"><div class="ed-dept-fill" style="width:80%; background:#9B5DE5;"></div></div>
+            </div>
+            <div class="ed-dept">
+              <div class="ed-dept-label"><span>مبيعات</span><span>70%</span></div>
+              <div class="ed-dept-bar"><div class="ed-dept-fill" style="width:70%; background:#60a5fa;"></div></div>
+            </div>
+            <div class="ed-dept">
+              <div class="ed-dept-label"><span>خدمة عملاء</span><span>60%</span></div>
+              <div class="ed-dept-bar"><div class="ed-dept-fill" style="width:60%; background:#facc15;"></div></div>
+            </div>
+            <div class="ed-dept">
+              <div class="ed-dept-label"><span>مالية</span><span>30%</span></div>
+              <div class="ed-dept-bar"><div class="ed-dept-fill" style="width:30%; background:#fb923c;"></div></div>
+            </div>
+            <div class="ed-dept">
+              <div class="ed-dept-label"><span>موارد بشرية</span><span>20%</span></div>
+              <div class="ed-dept-bar"><div class="ed-dept-fill" style="width:20%; background:#f472b6;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Tasks + Schedule + Current Vacancies -->
+      <div class="ed-row ed-bottom-row">
+        
+        <!-- Tasks -->
+        <div class="glass-card ed-panel">
+          <div class="ed-card-header">
+            <h3>المهام</h3>
+            <button class="emp-btn-add">+</button>
+          </div>
+          <div class="ed-tasks">
+            <div class="ed-task-item">
+              <div class="ed-task-info">
+                <h4>فرز السير الذاتية</h4>
+                <p>التقييم · ٢٧ مايو ٢٠٢٥</p>
+              </div>
+              <div class="ed-task-bar-wrap">
+                <div class="ed-task-bar"><div class="ed-task-fill" style="width:40%; background:#facc15;"></div></div>
+                <span class="ed-task-pct">٤٠٪</span>
+              </div>
+            </div>
+            <div class="ed-task-item">
+              <div class="ed-task-info">
+                <h4>جدولة المقابلات</h4>
+                <p>التواصل · ٢٧ مايو ٢٠٢٥</p>
+              </div>
+              <div class="ed-task-bar-wrap">
+                <div class="ed-task-bar"><div class="ed-task-fill" style="width:60%; background:#3B6AEF;"></div></div>
+                <span class="ed-task-pct">٦٠٪</span>
+              </div>
+            </div>
+            <div class="ed-task-item">
+              <div class="ed-task-info">
+                <h4>تواصل مع المرشحين</h4>
+                <p>العلاقات · ٢٧ مايو ٢٠٢٥</p>
+              </div>
+              <div class="ed-task-bar-wrap">
+                <div class="ed-task-bar"><div class="ed-task-fill" style="width:30%; background:#f87171;"></div></div>
+                <span class="ed-task-pct">٣٠٪</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <div class="glass-card ed-panel">
+          <div class="ed-card-header">
+            <h3>الجدول</h3>
+            <button class="emp-icon-btn">⋮</button>
+          </div>
+          <div class="ed-schedule">
+            <div class="ed-sched-item">
+              <div class="ed-sched-time">1:00 PM</div>
+              <div class="ed-sched-info">
+                <h4>عرض استراتيجية التسويق</h4>
+                <p>التسويق</p>
+              </div>
+            </div>
+            <div class="ed-sched-item">
+              <div class="ed-sched-time">2:30 PM</div>
+              <div class="ed-sched-info">
+                <h4>جلسة تحديث سياسة HR</h4>
+                <p>الموارد البشرية</p>
+              </div>
+            </div>
+            <div class="ed-sched-item">
+              <div class="ed-sched-time">4:00 PM</div>
+              <div class="ed-sched-info">
+                <h4>تحليل ملاحظات العملاء</h4>
+                <p>الدعم</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Current Vacancies -->
+        <div class="glass-card ed-panel ed-panel-wide">
+          <div class="ed-card-header">
+            <h3>التدريبات الحالية</h3>
+            <button class="emp-btn-outline">عرض الكل</button>
+          </div>
+          <div class="ed-vacancies-grid">
+            <div class="ed-vac-card">
+              <div class="ed-vac-top"><span class="ed-vac-icon">💻</span><button class="emp-icon-btn">⋮</button></div>
+              <h4>مطور برمجيات متدرب</h4>
+              <p class="ed-vac-salary">٣٠٠٠ - ٥٠٠٠ ج / شهرياً</p>
+              <div class="ed-vac-tags"><span>عن بُعد</span><span>دوام كامل</span></div>
+              <p class="ed-vac-apps">١٢٠ متقدم</p>
+            </div>
+            <div class="ed-vac-card">
+              <div class="ed-vac-top"><span class="ed-vac-icon">🎨</span><button class="emp-icon-btn">⋮</button></div>
+              <h4>مصمم جرافيك متدرب</h4>
+              <p class="ed-vac-salary">٢٥٠٠ - ٤٠٠٠ ج / شهرياً</p>
+              <div class="ed-vac-tags"><span>مختلط</span></div>
+              <p class="ed-vac-apps">٧٥ متقدم</p>
+            </div>
+            <div class="ed-vac-card">
+              <div class="ed-vac-top"><span class="ed-vac-icon">📊</span><button class="emp-icon-btn">⋮</button></div>
+              <h4>مسؤول مبيعات متدرب</h4>
+              <p class="ed-vac-salary">٤٠٠٠ - ٦٠٠٠ ج / شهرياً</p>
+              <div class="ed-vac-tags"><span>حضوري</span><span>عمولة</span></div>
+              <p class="ed-vac-apps">٧٥ متقدم</p>
+            </div>
+            <div class="ed-vac-card">
+              <div class="ed-vac-top"><span class="ed-vac-icon">📋</span><button class="emp-icon-btn">⋮</button></div>
+              <h4>منسق HR متدرب</h4>
+              <p class="ed-vac-salary">٣٠٠٠ - ٤٥٠٠ ج / شهرياً</p>
+              <div class="ed-vac-tags"><span>عن بُعد</span></div>
+              <p class="ed-vac-apps">٦٠ متقدم</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4: Recent Activity -->
+      <div class="ed-row">
+        <div class="glass-card ed-panel" style="width:100%;">
+          <div class="ed-card-header">
+            <h3>آخر النشاطات</h3>
+          </div>
+          <div class="ed-activity">
+            <div class="ed-act-item">
+              <div class="ed-act-dot" style="background:#4ade80;"></div>
+              <div class="ed-act-info">
+                <p><strong>أحمد محمد</strong> تقدم لوظيفة مطور برمجيات</p>
+                <span>منذ ٥ دقائق</span>
+              </div>
+            </div>
+            <div class="ed-act-item">
+              <div class="ed-act-dot" style="background:#3B6AEF;"></div>
+              <div class="ed-act-info">
+                <p><strong>سارة خالد</strong> تم قبولها مبدئياً لوظيفة مصمم جرافيك</p>
+                <span>منذ ١٥ دقيقة</span>
+              </div>
+            </div>
+            <div class="ed-act-item">
+              <div class="ed-act-dot" style="background:#f87171;"></div>
+              <div class="ed-act-info">
+                <p><strong>يوسف عادل</strong> تم رفض طلبه لوظيفة منسق HR</p>
+                <span>منذ ٣٠ دقيقة</span>
+              </div>
+            </div>
+            <div class="ed-act-item">
+              <div class="ed-act-dot" style="background:#facc15;"></div>
+              <div class="ed-act-info">
+                <p><strong>نورهان أحمد</strong> أكملت مهمة التقييم الفني</p>
+                <span>منذ ساعة</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<!-- Firebase Module -->
+<!-- Firebase Compat SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+
+<script>
+  (function() {
+    'use strict';
+
+  const loading = document.getElementById('dashboardLoading');
+  const app = document.getElementById('dashboardApp');
+  
+  const welcomeName = document.getElementById('welcomeName');
+  const welcomeSub = document.getElementById('welcomeSub');
+  const topName = document.getElementById('topName');
+  const topRole = document.getElementById('topRole');
+  const topAvatar = document.getElementById('topAvatar');
+
+  window.auth.onAuthStateChanged(async (user) => {
+    if (user) {
+      // Fetch user data from Firestore
+      try {
+        const userDoc = await window.db.collection("users").doc(user.uid).get();
+        if (userDoc.exists) {
+          const data = userDoc.data();
+          renderDashboard(data);
+        } else {
+          // Profile not found (old user). Let's create a default one for them.
+          const defaultData = {
+            fullName: user.displayName || 'مستخدم قديم',
+            email: user.email,
+            type: 'student', // default fallback
+            isSponsored: false,
+            isSubscribed: false,
+            createdAt: new Date().toISOString()
+          };
+          await window.db.collection("users").doc(user.uid).set(defaultData);
+          renderDashboard(defaultData);
+        }
+      } catch (error) {
+        console.error("Error fetching profile:", error);
+        alert("حدث خطأ أثناء تحميل البيانات من قاعدة البيانات. يرجى التأكد من قواعد أمان Firebase (Security Rules). رسالة الخطأ: " + error.message);
+        // Force sign out so they aren't stuck forever
+        await window.auth.signOut();
+        window.location.href = 'login.html';
+      }
+    } else {
+      // Not logged in
+      window.location.href = 'login.html';
+    }
+  });
+
+  function renderDashboard(data) {
+    // Hide loading, show app
+    loading.style.display = 'none';
+    app.style.display = 'flex';
+
+    // Set common UI
+    const nameStr = data.fullName || 'مستخدم';
+    const firstName = nameStr.split(' ')[0];
+    welcomeName.innerHTML = `أهلاً بيك يا ${firstName} <span class="emoji">👋</span>`;
+    topName.textContent = firstName;
+    topAvatar.textContent = firstName.charAt(0);
+
+    if (data.type === 'student') {
+      renderStudentUI(data);
+    } else if (data.type === 'employer') {
+      renderEmployerUI(data);
+    } else {
+      // default fallback
+      renderStudentUI(data);
+    }
+  }
+
+  function renderStudentUI(data) {
+    welcomeSub.textContent = "جاهز تبدأ مسيرتك النهاردة؟";
+    topRole.textContent = "طالب / خريج";
+    
+    document.getElementById('navJobs').style.display = 'flex';
+    document.getElementById('studentDashboard').style.display = 'grid';
+    document.getElementById('employerDashboard').style.display = 'none';
+    
+    document.getElementById('passportUni').textContent = data.university || "جامعة غير محددة";
+    
+    const badge = document.getElementById('passportBadge');
+
+    if (data.isSponsored) {
+      // Sponsored Student (AUC/BUE, etc)
+      badge.textContent = `Sponsored by University 🎓`;
+      badge.className = "badge badge-sponsored";
+      
+      // Show exclusive sponsored task
+      document.getElementById('sponsoredTask').style.display = 'flex';
+      
+      // Unlock premium tasks for free
+      const lockedTask = document.getElementById('lockedTask1');
+      lockedTask.classList.remove('job-locked');
+      lockedTask.querySelector('.job-action').innerHTML = 'تقديم';
+      lockedTask.querySelector('.job-action').style.color = 'var(--accent)';
+      lockedTask.querySelector('.job-action').href = '#';
+
+    } else if (data.isSubscribed) {
+      // Subscribed Student
+      badge.textContent = `internly Hustle 🚀`;
+      badge.className = "badge badge-pro";
+      
+      // Unlock premium tasks
+      const lockedTask = document.getElementById('lockedTask1');
+      lockedTask.classList.remove('job-locked');
+      lockedTask.querySelector('.job-action').innerHTML = 'تقديم';
+      lockedTask.querySelector('.job-action').style.color = 'var(--accent)';
+      lockedTask.querySelector('.job-action').href = '#';
+    } else {
+      // Regular Student -> Show Hustle Banner
+      document.getElementById('hustleBanner').style.display = 'flex';
+    }
+  }
+
+  function renderEmployerUI(data) {
+    welcomeSub.textContent = "اكتشف أفضل المواهب لشركتك.";
+    topRole.textContent = data.company || "صاحب عمل";
+    
+    // Show employer sidebar items
+    ['navInbox','navCalendar','navJobs','navCandidates','navRecruitment','navCV'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'flex';
+    });
+    document.getElementById('studentDashboard').style.display = 'none';
+    document.getElementById('hustleBanner').style.display = 'none';
+    document.getElementById('employerDashboard').style.display = 'flex';
+
+    // Initialize Charts
+    initEmployerCharts();
+  }
+
+  function initEmployerCharts() {
+    // 1. Applications Line Chart
+    const appCtx = document.getElementById('edApplicationsChart');
+    if (appCtx) {
+      new Chart(appCtx, {
+        type: 'line',
+        data: {
+          labels: ['١٣ مايو', '١٤ مايو', '١٥ مايو', '١٦ مايو', '١٧ مايو', '١٨ مايو'],
+          datasets: [{
+            label: 'تم التقديم',
+            data: [120, 190, 130, 250, 180, 320],
+            borderColor: '#3B6AEF',
+            backgroundColor: 'rgba(59,106,239,0.1)',
+            fill: true,
+            tension: 0.4,
+            borderWidth: 2,
+            pointRadius: 4,
+            pointBackgroundColor: '#3B6AEF'
+          },{
+            label: 'تم القبول',
+            data: [60, 80, 55, 100, 75, 140],
+            borderColor: '#9B5DE5',
+            backgroundColor: 'rgba(155,93,229,0.08)',
+            fill: true,
+            tension: 0.4,
+            borderWidth: 2,
+            borderDash: [5, 5],
+            pointRadius: 3,
+            pointBackgroundColor: '#9B5DE5'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: true, labels: { color: 'rgba(255,255,255,0.6)', font: { family: "'Cairo', sans-serif", size: 11 } } } },
+          scales: {
+            x: { ticks: { color: 'rgba(255,255,255,0.4)', font: { family: "'Cairo'", size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+            y: { ticks: { color: 'rgba(255,255,255,0.4)', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+          }
+        }
+      });
+    }
+
+    // 2. Donut Chart
+    const donutCtx = document.getElementById('edDonutChart');
+    if (donutCtx) {
+      new Chart(donutCtx, {
+        type: 'doughnut',
+        data: {
+          labels: ['لوحات وظائف', 'سوشيال ميديا', 'ترشيحات', 'وكالات'],
+          datasets: [{
+            data: [300, 300, 200, 150],
+            backgroundColor: ['#3B6AEF', '#9B5DE5', '#4ade80', '#facc15'],
+            borderColor: 'transparent',
+            borderWidth: 0,
+            hoverOffset: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '70%',
+          plugins: {
+            legend: { display: false },
+            tooltip: { bodyFont: { family: "'Cairo'" } }
+          }
+        }
+      });
+    }
+  }
+
+  // Logout
+  document.getElementById('logoutBtn').addEventListener('click', async () => {
+    await window.auth.signOut();
+    window.location.href = 'index.html';
+  });
+
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الباسبور المهني – internly</title>
+<meta name="description" content="ابني باسبورك المهني الرقمي على internly. وثّق مهاراتك، خلّي الشركات تلاقيك.">
+<meta name="theme-color" content="#0a0b14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/passport.css">
+<!-- AOS.js -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════
+     FLOATING PILL NAVBAR + MEGA MENU
+════════════════════════════════════ -->
+<nav class="pill-nav" id="mainNav">
+  <div class="nav-container">
+    <div class="nav-logo"><a href="index.html"><img src="assets/logo.png" alt="internly"></a></div>
+    <ul class="nav-links" id="navLinks">
+      <li data-dropdown="students">
+        <a href="#">للطلاب</a>
+        <div class="mega-dropdown" id="dd-students">
+          <div class="mega-promo">
+            <div class="mega-promo-badge"><img src="assets/logo.png" alt="internly"></div>
+            <p class="mega-promo-text">اكتشف تدريبات موثّقة ومنظمة تبني مسيرتك المهنية صح من البداية.</p>
+            <a href="#" class="mega-promo-link">ابدأ رحلتك <span>→</span></a>
+          </div>
+          <div class="mega-col">
+            <h4>استكشف</h4>
+            <a href="#">تصفّح التدريبات الموثّقة</a>
+            <a href="passport.html">ابني الباسبور المهني</a>
+            <a href="#">مينتورشيب وتوجيه</a>
+            <a href="#">تقييم المهارات</a>
+          </div>
+          <div class="mega-col">
+            <h4>موارد</h4>
+            <a href="#">نصائح المقابلات</a>
+            <a href="#">دليل أول تدريب</a>
+            <a href="#">قصص نجاح</a>
+          </div>
+        </div>
+      </li>
+      <li data-dropdown="employers">
+        <a href="#">لأصحاب العمل</a>
+        <div class="mega-dropdown" id="dd-employers">
+          <div class="mega-promo">
+            <div class="mega-promo-badge"><img src="assets/logo.png" alt="internly"></div>
+            <p class="mega-promo-text">وصّل شركتك بأحسن المواهب الجديدة في مصر — متدربين متقيمين وجاهزين.</p>
+            <a href="#" class="mega-promo-link">انشر تدريب <span>→</span></a>
+          </div>
+          <div class="mega-col">
+            <h4>الحلول</h4>
+            <a href="#">انشر تدريب</a>
+            <a href="#">مطابقة ذكية بالـ AI</a>
+            <a href="#">بناء العلامة التجارية</a>
+            <a href="#">أسعار الشركات</a>
+          </div>
+          <div class="mega-col">
+            <h4>موارد</h4>
+            <a href="#">لماذا internly؟</a>
+            <a href="#">اطلب عرض</a>
+            <a href="#">تواصل مع المبيعات</a>
+          </div>
+        </div>
+      </li>
+      <li data-dropdown="universities">
+        <a href="#">الجامعات</a>
+        <div class="mega-dropdown" id="dd-universities">
+          <div class="mega-promo">
+            <div class="mega-promo-badge"><img src="assets/logo.png" alt="internly"></div>
+            <p class="mega-promo-text">أدوات متكاملة لمراكز التوظيف في الجامعات لمتابعة نجاح طلابها.</p>
+            <a href="#" class="mega-promo-link">اطلب عرض <span>→</span></a>
+          </div>
+          <div class="mega-col">
+            <h4>الحلول</h4>
+            <a href="#">شبكة الشراكات</a>
+            <a href="#">متابعة نجاح الطلاب</a>
+            <a href="#">Bootcamps مشتركة</a>
+          </div>
+          <div class="mega-col">
+            <h4>موارد</h4>
+            <a href="#">أدوات التسويق</a>
+            <a href="#">قصص جامعات</a>
+            <a href="#">اطلب عرض</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-actions">
+      <a href="login.html" class="btn-login" id="btnLogin">تسجيل دخول</a>
+      <a href="signup.html" class="btn-signup" id="btnSignup">سجّل مجاناً</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — HERO (Full-bleed image + overlay)
+     ══════════════════════════════════════════════ -->
+<section class="hs-hero">
+  <img src="assets/pp_hero.png" alt="" class="hs-hero-img">
+  <div class="hs-hero-overlay"></div>
+  <div class="hs-hero-content" data-aos="fade-up">
+    <h1>اظهر.<br><span class="hs-accent">واتوظّف.</span></h1>
+    <p class="hs-hero-sub">باسبورك المهني الرقمي هو بطاقة دخولك لعالم التدريبات الحقيقية. وثّق مهاراتك، خلّي الشركات تلاقيك.</p>
+    <div class="hs-scroll-hint">
+      <div class="hs-scroll-arrow"></div>
+      <span>اكتشف إزاي</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — MARQUEE (Giant bold typography)
+     ══════════════════════════════════════════════ -->
+<div class="hs-marquee">
+  <div class="hs-marquee-track">
+    <span class="hs-marquee-item">هندسة برمجيات</span>
+    <span class="hs-marquee-item">Nvidia</span>
+    <span class="hs-marquee-item">تسويق رقمي</span>
+    <span class="hs-marquee-item">Spotify</span>
+    <span class="hs-marquee-item">تصميم جرافيك</span>
+    <span class="hs-marquee-item">Google</span>
+    <span class="hs-marquee-item">إدارة أعمال</span>
+    <span class="hs-marquee-item">Microsoft</span>
+    <span class="hs-marquee-item">ذكاء اصطناعي</span>
+    <span class="hs-marquee-item">Amazon</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="hs-marquee-item">هندسة برمجيات</span>
+    <span class="hs-marquee-item">Nvidia</span>
+    <span class="hs-marquee-item">تسويق رقمي</span>
+    <span class="hs-marquee-item">Spotify</span>
+    <span class="hs-marquee-item">تصميم جرافيك</span>
+    <span class="hs-marquee-item">Google</span>
+    <span class="hs-marquee-item">إدارة أعمال</span>
+    <span class="hs-marquee-item">Microsoft</span>
+    <span class="hs-marquee-item">ذكاء اصطناعي</span>
+    <span class="hs-marquee-item">Amazon</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — HOW IT WORKS (4-column cards)
+     ══════════════════════════════════════════════ -->
+<section class="hs-how" id="hsHow">
+  <h2 class="hs-how-label" data-aos="fade-up">إزاي بيشتغل؟</h2>
+
+  <div class="hs-how-grid">
+    <div class="hs-how-card" data-aos="fade-up" data-aos-delay="0">
+      <h3>ترشيحات مخصصة</h3>
+      <p>بنرشحلك تدريبات ومهام مناسبة لمجالك ومهاراتك الحالية. كل فرصة متاحة ليك مبنية على بياناتك الحقيقية.</p>
+      <div class="hs-how-photos">
+        <img src="assets/pp_person1.png" alt="متدرب">
+        <img src="assets/pp_person2.png" alt="متدربة">
+        <img src="assets/pp_person3.png" alt="متدرب">
+      </div>
+    </div>
+
+    <div class="hs-how-card" data-aos="fade-up" data-aos-delay="100">
+      <h3>نصائح مهنية حقيقية</h3>
+      <p>خبراء في مجالك بيقدموا لك نصائح ومينتورشيب مبني على خبرتهم الفعلية في السوق المصري.</p>
+      <div class="hs-how-photos">
+        <img src="assets/pp_person2.png" alt="مينتور">
+        <img src="assets/pp_person1.png" alt="متدرب">
+      </div>
+    </div>
+
+    <div class="hs-how-card" data-aos="fade-up" data-aos-delay="200">
+      <h3>فعاليات تشبيك</h3>
+      <p>اتعرّف على ناس في مجالك وابني شبكة علاقات مهنية من أول يوم. فعاليات حضورية وأونلاين.</p>
+      <div class="hs-how-photos">
+        <img src="assets/pp_person3.png" alt="فعالية">
+        <img src="assets/pp_person1.png" alt="تشبيك">
+        <img src="assets/pp_person2.png" alt="فريق">
+      </div>
+    </div>
+
+    <div class="hs-how-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>تشبيك ذكي</h3>
+      <p>الذكاء الاصطناعي بيوصّلك بالناس والفرص اللي فعلاً هتنفعك في مسيرتك المهنية.</p>
+      <div class="hs-how-photos">
+        <img src="assets/pp_person2.png" alt="تشبيك">
+        <img src="assets/pp_person3.png" alt="AI">
+      </div>
+    </div>
+  </div>
+
+  <div class="hs-how-cta" data-aos="fade-up" data-aos-delay="400">
+    <a href="signup.html" class="hs-btn-outline">ابدأ رحلتك المهنية</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 — TESTIMONIALS
+     ══════════════════════════════════════════════ -->
+<section class="hs-testimonials" id="hsTestimonials">
+  <div class="hs-test-inner">
+    <div class="hs-test-info" data-aos="fade-up">
+      <p class="hs-test-label">قصص حقيقية</p>
+      <h2 class="hs-test-title">للناس اللي<br><span class="hs-highlight">كانوا في مكانك</span></h2>
+    </div>
+
+    <div class="hs-quote-card" data-aos="fade-left" data-aos-delay="200">
+      <p class="hs-quote-text">"كنت بدور على تدريب ومكنتش عارفة أبدأ منين. سجلت على internly وعملت الباسبور المهني بتاعي. بعد أسبوع واحد بس، شركة بعتتلي رسالة وطلبتني أعملهم مهمة بمقابل مادي. ومن هنا كانت البداية الحقيقية!"</p>
+      <div class="hs-quote-author">
+        <img src="assets/pp_testimonial.png" alt="مريم أحمد" class="hs-quote-avatar">
+        <div>
+          <p class="hs-quote-name">مريم أحمد</p>
+          <p class="hs-quote-role">خريجة إعلام — جامعة القاهرة ٢٠٢٤</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 — BOTTOM CTA
+     ══════════════════════════════════════════════ -->
+<section class="hs-cta" id="hsCta">
+  <div class="hs-cta-text" data-aos="fade-up">
+    <h2>ابدأ<br>بناء<br><span class="hs-accent">مستقبلك</span></h2>
+    <p>انضم لأكبر شبكة مهنية موثّقة للشباب في مصر. باسبورك الرقمي هيكون بطاقة دخولك.</p>
+    <div class="hs-cta-form">
+      <input type="email" class="hs-cta-input" placeholder="بريدك الإلكتروني">
+      <a href="signup.html" class="hs-cta-submit">سجّل مجاناً</a>
+    </div>
+  </div>
+
+  <div class="hs-cta-visual" data-aos="fade-left" data-aos-delay="200">
+    <img src="assets/pp_laptop.png" alt="منصة internly">
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     BIG BRAND FOOTER
+     ══════════════════════════════════════════════ -->
+<div class="hs-big-brand">
+  <p class="hs-big-brand-sub">الشبكة المهنية لجيل الذكاء الاصطناعي</p>
+  <h2>internly</h2>
+</div>
+
+
+<!-- ═══════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4 class="footer-col-title">للطلاب</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">تصفّح التدريبات</a></li>
+        <li><a href="passport.html">الباسبور المهني</a></li>
+        <li><a href="#">مينتورشيب</a></li>
+        <li><a href="#">تقييم المهارات</a></li>
+        <li><a href="#">مهام AI بالساعة</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">لأصحاب العمل</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">انشر تدريب</a></li>
+        <li><a href="#">الأسعار</a></li>
+        <li><a href="#">اطلب عرض</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">الجامعات</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">شبكة الشراكات</a></li>
+        <li><a href="#">Bootcamps مشتركة</a></li>
+        <li><a href="#">اطلب عرض</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">الشركة</h4>
+      <ul class="footer-col-links">
+        <li><a href="about.html">من نحن</a></li>
+        <li><a href="#">انضم لفريقنا</a></li>
+        <li><a href="#">المدونة</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 class="footer-col-title">الدعم</h4>
+      <ul class="footer-col-links">
+        <li><a href="#">مركز المساعدة</a></li>
+        <li><a href="#">تواصل معنا</a></li>
+        <li><a href="#">الشروط والأحكام</a></li>
+        <li><a href="#">سياسة الخصوصية</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <div class="footer-brand"><img src="assets/logo.png" alt="internly" class="footer-logo-img"></div>
+      <div class="footer-legal">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">شروط الاستخدام</a>
+      </div>
+      <p class="footer-copyright">&copy; 2025 internly. جميع الحقوق محفوظة</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 80
+  });
+</script>
+
+</body>
+</html>
